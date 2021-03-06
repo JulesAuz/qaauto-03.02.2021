@@ -8,8 +8,6 @@
     <artifactId>autotests</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
-
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
