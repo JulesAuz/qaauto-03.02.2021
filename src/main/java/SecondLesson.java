@@ -35,12 +35,6 @@ public class SecondLesson {
         addToCart = list.get(2);
         addToCart.click();
 
-        WebElement menuButton = driver.findElement(By.id("react-burger-menu-btn"));
-        menuButton.click();
-
-        WebElement logoutButton = driver.findElement(By.id("logout_sidebar_link"));
-        logoutButton.click();
-
         driver.quit();
     }
 }
