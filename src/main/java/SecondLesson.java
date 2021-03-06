@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.awt.*;
 import java.util.List;
 
 public class SecondLesson {
@@ -24,26 +25,28 @@ public class SecondLesson {
         loginButton.click();
 
         List<WebElement> list = driver.findElements(By.xpath("//button"));
-        WebElement addToCart = list.get(2);
+        WebElement addToCart = list.get(1);
         addToCart.click();
 
         WebElement filter = driver.findElement(By.className("product_sort_container"));
         Select select = new Select(filter);
 
-        List<WebElement> listOfOptions = select.getOptions();
-
-        for (WebElement listOfOption : listOfOptions) {
-            System.out.println(listOfOption.getText());
 
             select.selectByVisibleText("Name (Z to A)");
-            addToCart = list.get(3);
+            addToCart = list.get(2);
             addToCart.click();
+
+        WebElement menuButton = driver.findElement(By.id("react-burger-menu-btn"));
+        menuButton.click();
+
+        WebElement logoutButton = driver.findElement(By.id("logout_sidebar_link"));
+        logoutButton.click();
 
             driver.quit();
 
         }
 
-    }
+
 
 
 }
