@@ -31,10 +31,9 @@ public class SecondLesson {
         WebElement filter = driver.findElement(By.className("product_sort_container"));
         Select select = new Select(filter);
 
-
-            select.selectByVisibleText("Name (Z to A)");
-            addToCart = list.get(2);
-            addToCart.click();
+        select.selectByVisibleText("Name (Z to A)");
+        addToCart = list.get(2);
+        addToCart.click();
 
         WebElement menuButton = driver.findElement(By.id("react-burger-menu-btn"));
         menuButton.click();
@@ -42,11 +41,6 @@ public class SecondLesson {
         WebElement logoutButton = driver.findElement(By.id("logout_sidebar_link"));
         logoutButton.click();
 
-            driver.quit();
-
-        }
-
-
-
-
+        driver.quit();
+    }
 }
