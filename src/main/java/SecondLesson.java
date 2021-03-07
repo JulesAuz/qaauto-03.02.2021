@@ -3,7 +3,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -33,14 +35,20 @@ public class SecondLesson {
         Select select = new Select(filter);
 
         List<WebElement> listOfOptions = select.getOptions();
-        for (WebElement listOfOption : listOfOptions)
-            System.out.println(listOfOption.getText());
+
+        for(int i = 0; i < listOfOptions.size(); i++) {
+            System.out.println(listOfOptions.get(i).getText());
+        }
 
             select.selectByVisibleText("Name (Z to A)");
             addToCart = list.get(2);
             addToCart.click();
 
-            driver.quit();
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("react-burger-menu-btn")));
+        select.selectByVisibleText("Logout");
+
+        driver.quit();
 
     }
 }
